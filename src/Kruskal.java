@@ -32,10 +32,7 @@ public class Kruskal {
         q.add(new Kanten(2, 3, 3));
         q.add(new Kanten(3, 4, 4));
         Collections.sort(q);
+        System.out.println("Hentai>all");
     }
-
-
-
-
 }
 
