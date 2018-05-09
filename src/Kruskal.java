@@ -72,7 +72,11 @@ public class Kruskal {
         }while(baum.size() < anzahlKnoten-1);
         return baum;
     }
-
+    public void output(ArrayList<Kanten> e){
+        for(Kanten k : e){
+            System.out.println(k.getK1() + " - " + k.getWert() + " - " + k.getK2());
+        }
+    }
 
 
 
