@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.PriorityQueue;
@@ -32,7 +33,13 @@ public class Kruskal {
         q.add(new Kanten(1, 2, 3));
         q.add(new Kanten(2, 3, 4));
         Collections.sort(q);
+        ArrayList<Kanten> fertigerBaum = generateBaum(q);
+        output(fertigerBaum);
+    }
 
+    public ArrayList<Kanten> generateBaum(ArrayList<Kanten> q){
+        int min, max;
+        ArrayList<Kanten> baum = new ArrayList<Kanten>();
         for(int i = 0; i < anzahlKnoten; i++){
             a[i] = 1;
             m[i] = i;
@@ -40,10 +47,33 @@ public class Kruskal {
         }
 
         do{
-
-        }while()
-
+            Kanten k = q.remove(0);
+            int i = k.getK1();
+            int j = k.getK2();
+            if(z[i] != z[j]){
+                baum.add(k);
+                if(a[z[i]] < a[z[j]]){
+                    min = i;
+                    max = j;
+                } else{
+                    max = i;
+                    min = j;
+                }
+                a[z[max]] = a[z[max]] + a[z[min]];
+                int x = min;
+                do{
+                    z[x] = z[max];
+                    x = m[x];
+                } while(x != min);
+                int temp = m[i];
+                m[i] = m[j];
+                m[j] = temp;
+            }
+        }while(baum.size() < anzahlKnoten-1);
+        return baum;
     }
+
+
 
 
 
