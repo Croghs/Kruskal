@@ -19,20 +19,34 @@ public class Kruskal {
     }
 
     public Kruskal(){
-        q.add(new Kanten(1, 6, 5));
-        q.add(new Kanten(1, 2, 8));
-        q.add(new Kanten(2, 6, 2));
-        q.add(new Kanten(2, 7, 3));
-        q.add(new Kanten(6, 7, 6));
-        q.add(new Kanten(5, 6, 1));
-        q.add(new Kanten(5, 7, 3));
-        q.add(new Kanten(4, 5, 4));
-        q.add(new Kanten(4, 7, 5));
-        q.add(new Kanten(3, 7, 2));
-        q.add(new Kanten(2, 3, 3));
+        q.add(new Kanten(0, 5, 5));
+        q.add(new Kanten(0, 1, 8));
+        q.add(new Kanten(1, 5, 2));
+        q.add(new Kanten(1, 6, 3));
+        q.add(new Kanten(5, 6, 6));
+        q.add(new Kanten(4, 5, 1));
+        q.add(new Kanten(4, 6, 3));
         q.add(new Kanten(3, 4, 4));
+        q.add(new Kanten(3, 6, 5));
+        q.add(new Kanten(2, 6, 2));
+        q.add(new Kanten(1, 2, 3));
+        q.add(new Kanten(2, 3, 4));
         Collections.sort(q);
-        System.out.println("Hentai>all");
+
+        for(int i = 0; i < anzahlKnoten; i++){
+            a[i] = 1;
+            m[i] = i;
+            z[i] = i;
+        }
+
+        do{
+
+        }while()
+
     }
+
+
+
+
 }
 
